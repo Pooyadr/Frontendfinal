@@ -1,0 +1,333 @@
+/*Algemeen:
+
+1em = 16px > zodat de waarde altijd even blijft na veranderingen.
+bron: https://css-tricks.com/typography-for-developers/
+
+font-sizes: https://www.woorank.com/en/edu/seo-guides/mobile-font-size
+*/
+
+body {
+    font-family: avenir;
+}
+
+/*header*/
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    font-family: avenir;
+    align-items: center;
+}
+
+/*Hiermee maak ik de afstand van de eerste element in de li groter waardoor deze links verplaats en de "about me" rechts*/
+
+li:first-child {
+    flex-grow: 1;
+    margin-left: -1em;
+    /*This defines the ability for a flex item to grow if necessary.
+    bron: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+}
+
+li > a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+    padding: 4.1em 0.6em 0.6em 0.6em;
+}
+
+/*Javascript verandering door te klikken op de H1 veranderd de nav.
+https: //www.quackit.com/css/functions/css_linear-gradient_function.cfm*/
+
+body.gradient {
+    background: linear-gradient(to right, white, white, hotpink);
+}
+
+/*breedte van de img, aangeroepen tot eerste img van alle img in mijn HTML*/
+
+li:nth-of-type(1) img {
+    width: 3.125em;
+}
+
+section {
+    margin-top: -11em;
+}
+
+/*ik had hier eerst classes gebruikt, veranderd in nth-of-type (minder elementen in html) bron van inspiratie: https://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/*/
+
+li:nth-of-type(2):hover a,
+li:nth-of-type(3):hover a {
+    background: black;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+/*Het onderstaande gaat over mijn "main", onder de header*/
+
+div {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    /*zorgt ervoor dat mijn h1 en p onder elkaar terecht komen*/
+    flex-direction: column;
+    margin: 3em 5em 5em;
+    height: 100vh;
+}
+
+/*CSS try out > keyframes is een animatie die verandering van plaats of kleur kan weergeven. Vaak uitgedrukt in % waarbij de 100% staat voor afgeronde animatie. Hier komt mijn H1 van rechts op de plek, de width staat voor grootte, je kan hier ook mee spelen. Ik begon gewoon in css de @ in te voeren en kwam @keyframs tegen, toen ben ik er meer erover gaan lezen. Ook gespeelt met achtergrond vervagen van alleen de H1 element.
+
+bronnen:1. https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations
+2. https://tympanus.net/codrops/css_reference/keyframes/
+
+
+@keyframes change {
+    from {
+        background-color: hotpink;
+    }
+    to {
+        background-color: white;
+    }
+}
+
+    animation-name: change;
+    animation-duration: 5s;
+
+*/
+
+@keyframes mymove {
+    from {
+        margin-left: 100%;
+        width: 100%;
+    }
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+h1 {
+    color: hotpink;
+    font-size: 2em;
+    animation-name: mymove;
+    animation-duration: 5s;
+    cursor: pointer;
+}
+
+/*Display block zorgt ervoor dat de img in het midden van de pagina staat
+bron: https://www.sftcc.com/007/center.html*/
+
+.imgslidedown {
+    width: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 12em;
+    margin-left: 9em;
+}
+
+/*Content portfolio*/
+
+article > a > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: auto;
+}
+
+article > p {
+    text-align: center;
+}
+
+article:hover {
+    cursor: pointer;
+    transform: scale(-1);
+    opacity: 50%;
+}
+
+h2 {
+    text-align: center;
+    color: hotpink;
+}
+
+/*about me pagina*/
+
+.selfie {
+    width: 70%;
+    margin-left: 1.5em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5em;
+}
+
+.titels {
+    margin-top: 2em;
+    margin-left: 1.2em;
+    text-decoration: underline dashed black;
+}
+
+.teksten {
+    font-family: monospace;
+    font-size: 1em;
+    max-width: 25em;
+    margin-left: 3em;
+    margin-bottom: 5em;
+}
+
+/*Formulier in mijn footer (onderaan de pagina)*/
+
+form {
+    display: flex;
+    flex-direction: column;
+    background: black;
+    color: white;
+    height: 36em;
+}
+
+legend {
+    text-align: center;
+    margin-top: 10em;
+    padding: 1em;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-style: none;
+}
+
+input {
+    margin-left: 100em;
+    border-radius: 0.5em;
+    border: none;
+    height: 3em;
+    width: 37em;
+    margin: auto;
+    color: black;
+}
+
+input:focus {
+    background-color: lightcyan;
+    border-style: dashed;
+    border-color: hotpink;
+}
+
+label {
+    text-align: center;
+    color: white;
+    padding: 0.5em;
+}
+
+select {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 37em;
+    color: white;
+}
+
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 37em;
+    height: 10em;
+    border: none;
+    border-radius: 0.5em;
+}
+
+button {
+    /*display block gebruikt + margins om te centreren bron: https://www.w3.org/Style/Examples/007/center.nl.html*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5em;
+    background-color: hotpink;
+    border: none;
+    border-radius: 10em;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    width: 15em;
+}
+
+button:hover {
+    background-color: aquamarine;
+}
+
+/* Voor website formaat: mediaquery, zowel voor header, main en content*/
+
+@media (min-width:40em) {
+    section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        margin: 3em 5em 5em;
+        height: 100vh;
+    }
+
+    h1 {
+        font-size: 5em;
+        color: aquamarine;
+    }
+
+    .imgslidedown {
+        width: 1em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10em;
+        margin-left: 40em;
+    }
+
+    .teksten {
+        max-width: 50%;
+        margin-left: 10em;
+        font-size: 1em;
+    }
+
+    .titels {
+        margin-left: 2em;
+        font-size: 4em;
+        filter: drop-shadow(0.1em 0.1em 0 hotpink);
+        text-decoration: none;
+    }
+
+}
+
+/* Weg gehaald omdat het een te groot bestand was om te pushen via github = video voor detail pagina VR
+
+embed {
+
+width: 30em;
+height: 15em; } */
+
+/*
+dropdownoptie voor als ik gevorderd ben.
+li ul {
+    opacity: 0;
+    transition: .3s;
+}
+
+li:hover ul {
+    opacity: 1;
+}
+*/
+
+/*Hoe kan ik ervoor zorgen dat na de hover, het niet verplaatst? position: absolute/fixed helpen niet*/
+
+/*
+https://css-tricks.com/dropdown-menus-with-more-forgiving-mouse-movement-paths
+= ik wil alleen bij de portfolio een dropdown weergeven, hoe kan ik dit het beste doen? Door middel van class?*/
