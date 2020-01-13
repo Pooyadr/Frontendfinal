@@ -10,6 +10,13 @@ body {
     font-family: avenir;
 }
 
+/*Javascript verandering door te klikken op de H1 veranderd de body.
+https: //www.quackit.com/css/functions/css_linear-gradient_function.cfm*/
+
+body.gradient {
+    background: linear-gradient(to right, white, white, hotpink);
+}
+
 /*header*/
 
 ul {
@@ -34,13 +41,6 @@ li > a {
     color: black;
     font-size: 1em;
     padding: 4.1em 0.6em 0.6em 0.6em;
-}
-
-/*Javascript verandering door te klikken op de H1 veranderd de nav.
-https: //www.quackit.com/css/functions/css_linear-gradient_function.cfm*/
-
-body.gradient {
-    background: linear-gradient(to right, white, white, hotpink);
 }
 
 /*breedte van de img, aangeroepen tot eerste img van alle img in mijn HTML*/
